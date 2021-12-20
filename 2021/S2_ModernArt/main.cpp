@@ -5,7 +5,7 @@ using namespace std;
 void printCanvas(int** arr, int row, int col){
     for(int i =0; i < row; i++) {
         for (int j = 0; j < col; j++) {
-            if(arr[i][j] == 1){
+            if(arr[i][j]%2 == 1){
                 cout << 'G';
             }
             else
@@ -49,6 +49,7 @@ int main() {
         else
             col[num-1]++;
     }
+
     for(int i = 0; i < M; i++){
         for(int j = 0; j < N; j++){
             arr[i][j] += row[i];
@@ -60,6 +61,8 @@ int main() {
             arr[i][j] += col[j];
         }
     }
+
+    //printCanvas(arr, M, N);
 
     cout << countGold(arr, M, N);
 
