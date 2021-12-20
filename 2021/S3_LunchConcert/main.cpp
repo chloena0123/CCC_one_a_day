@@ -27,6 +27,8 @@ int main() {
     int* speed = new int[N];
     int* hear = new int[N];
 
+    long long time{0};
+
     int max_C = 0;
     for(int i = 0; i < N; i++){
         cin >> pos[i] >> speed[i] >> hear[i];
@@ -36,6 +38,7 @@ int main() {
     }
 
     long long min = calculateTime(pos, speed, hear, N, 0);
+    cout << min << endl;
     for(int i = 1; i < max_C; i++){
         long long t = calculateTime(pos, speed, hear, N, i);
         if(t < min){
